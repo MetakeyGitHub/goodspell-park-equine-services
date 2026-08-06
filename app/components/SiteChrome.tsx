@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 const exploreLinks = [
   ["Stable rental", "/stablerental"],
   ["Stallions", "/stallions"],
@@ -13,10 +11,12 @@ const exploreLinks = [
 export function SiteHeader() {
   return (
     <header className="site-header">
-      <Link className="brand" href="/" aria-label="Goodspell Park home">
+      {/* vinext static output uses native navigation without a prefetch runtime. */}
+      {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+      <a className="brand" href="/" aria-label="Goodspell Park home">
         <span className="brand-mark">GP</span>
         <span><strong>Goodspell Park</strong><small>Equine Services</small></span>
-      </Link>
+      </a>
 
       <nav className="desktop-nav" aria-label="Primary navigation">
         <a href="/about-us">About</a>
