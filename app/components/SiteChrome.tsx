@@ -41,6 +41,7 @@ export function SiteHeader() {
           <a href="/competitionhorses">Competition horses</a>
           <a href="/facilities">Facilities</a>
           {exploreLinks.map(([label, href]) => <a href={href} key={href}>{label}</a>)}
+          <a className="mobile-contact-link" href="/contact">Make an enquiry →</a>
         </nav>
       </details>
     </header>

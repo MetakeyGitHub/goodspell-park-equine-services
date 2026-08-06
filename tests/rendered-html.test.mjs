@@ -55,6 +55,7 @@ test("includes accessible navigation and sharing metadata", async () => {
 
   assert.match(html, /aria-label="Primary navigation"/);
   assert.match(html, /aria-label="Open navigation"/);
+  assert.match(html, /class="mobile-contact-link" href="\/contact"/);
   assert.match(html, /property="og:image" content="https:\/\/goodspell-park-equine-services\.vercel\.app\/og\.png"/);
   assert.match(html, /lang="en-AU"/);
   assert.match(html, /rel="canonical" href="https:\/\/goodspell-park-equine-services\.vercel\.app"/);

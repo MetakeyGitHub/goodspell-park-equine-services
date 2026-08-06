@@ -253,6 +253,7 @@ footer address a:hover { color: white; }
   .mobile-nav summary { min-width: 54px; min-height: 44px; display: grid; place-items: center; }
   .mobile-nav nav { position: absolute; right: -8px; top: 48px; display: grid; width: min(320px, calc(100vw - 32px)); max-height: min(76vh, 660px); overflow-y: auto; padding: 12px 24px 22px; gap: 0; background: var(--cream); color: var(--ink); box-shadow: 0 18px 50px rgba(0,0,0,.24); font-size: 13px; }
   .mobile-nav nav a { display: flex; align-items: center; min-height: 48px; border-bottom: 1px solid var(--line); }
+  .mobile-nav nav .mobile-contact-link { margin-top: 12px; padding: 0 14px; border: 0; background: var(--forest); color: white; font-size: 10px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
   .hero { min-height: 720px; }
   .hero-image { object-position: 62% center; }
   .hero-shade { background: linear-gradient(90deg, rgba(5,23,18,.86) 0%, rgba(5,23,18,.48) 74%, rgba(5,23,18,.18)); }
