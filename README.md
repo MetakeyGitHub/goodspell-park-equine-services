@@ -8,6 +8,7 @@ A premium, responsive homepage concept for Goodspell Park, a boutique equestrian
 - vinext (Next.js-compatible routing on Vite)
 - Tailwind CSS 4
 - Cloudflare Workers-compatible output
+- Static Vercel production output
 
 ## Run locally
 
