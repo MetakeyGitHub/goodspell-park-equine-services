@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
 import { ContactBand, InnerHero, PageShell } from "../components/SiteChrome";
+import { pageMetadata } from "../seo";
 
-export const metadata: Metadata = { title: "About Jamie & Sue Coman", description: "Meet the international showjumping riders behind Goodspell Park." };
+export const metadata = pageMetadata({ title: "Jamie & Sue Coman — Showjumping Coaches", description: "Meet Olympic showjumper Jamie Coman and Grand Prix rider Sue Coman, the experienced coaching and horse-training team behind Goodspell Park.", path: "/about-us", keywords: ["Jamie Coman", "Sue Coman", "showjumping coach Victoria", "Olympic showjumper Australia", "Goodspell Park team"] });
 
 export default function AboutPage() {
   return <PageShell>

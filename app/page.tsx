@@ -1,30 +1,36 @@
-import type { Metadata } from "next";
 import { ContactBand, PageShell } from "./components/SiteChrome";
+import { pageMetadata } from "./seo";
 
-export const metadata: Metadata = {
-  description:
-    "Boutique showjumping, coaching, training, agistment and thoroughbred care in Whiteheads Creek, Victoria.",
-};
+export const metadata = pageMetadata({
+  title: "Equestrian Centre & Showjumping Coaching Victoria",
+  description: "Showjumping coaching, horse training, agistment, spelling and professional equestrian facilities near Seymour and Benalla, Victoria.",
+  path: "/",
+  keywords: ["equestrian centre Victoria", "showjumping coaching Victoria", "horse training Seymour", "horse agistment Seymour", "horse spelling Benalla", "Goodspell Park"],
+});
 
 const services = [
   {
     number: "01",
     title: "Training & agistment",
+    href: "/services",
     copy: "Individual programs for showjumpers at every stage, supported by attentive daily care and experienced eyes.",
   },
   {
     number: "02",
     title: "Coaching & clinics",
+    href: "/book-online",
     copy: "Private and group coaching for riders from novice through to Grand Prix, at Goodspell Park or on location.",
   },
   {
     number: "03",
     title: "Thoroughbred care",
+    href: "/services",
     copy: "Considered pre-training, spelling and agistment programs built around each horse’s wellbeing and development.",
   },
   {
     number: "04",
     title: "Sales & consultancy",
+    href: "/horsesforsale",
     copy: "Practical, trusted guidance for purchases, sales and consignments, grounded in decades of competition experience.",
   },
 ];
@@ -90,7 +96,7 @@ export default function Home() {
               <span className="service-number">{service.number}</span>
               <h3>{service.title}</h3>
               <p>{service.copy}</p>
-              <a href="mailto:scoman2@bigpond.com" aria-label={`Enquire about ${service.title}`}>Enquire <span aria-hidden="true">↗</span></a>
+              <a href={service.href} aria-label={`Learn more about ${service.title}`}>Learn more <span aria-hidden="true">→</span></a>
             </article>
           ))}
         </div>

@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
 import { ContactBand, InnerHero, PageShell } from "../components/SiteChrome";
+import { pageMetadata } from "../seo";
 
-export const metadata: Metadata = { title: "News", description: "Updates and archive stories from Goodspell Park." };
+export const metadata = pageMetadata({ title: "Goodspell Park News & Archive", description: "Read archive updates, breeding highlights and team opportunities from Goodspell Park Equine Services in Victoria.", path: "/news", keywords: ["Goodspell Park news", "equestrian news Victoria", "showjumping news Australia", "sport horse breeding Australia"] });
 export default function NewsPage() { return <PageShell>
   <InnerHero eyebrow="From Goodspell Park" title="News from the team and the stable." copy="Archive updates, breeding highlights and opportunities from Goodspell Park." image="/images/pages/news.jpg" imageAlt="Horse and rider at Goodspell Park" position="center 30%" />
   <section className="editorial-section" id="content"><div className="editorial-lead compact"><p className="eyebrow">From the archive</p><h2>Stories worth keeping.</h2><p>The source website currently contains two historical news items. They are retained here as archive content.</p></div>

@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
 import { ContactBand, InnerHero, PageShell } from "../components/SiteChrome";
+import { pageMetadata } from "../seo";
 
-export const metadata: Metadata = { title: "Stable Rental", description: "A professional equestrian business base with stables for rent near Seymour." };
+export const metadata = pageMetadata({ title: "Horse Stable Rental Near Seymour", description: "Enquire about professional horse stables for rent and access to extensive equestrian facilities at Whiteheads Creek near Seymour, Victoria.", path: "/stablerental", keywords: ["horse stables for rent Seymour", "stable rental Victoria", "equestrian business base Victoria", "racehorse stables Seymour"] });
 export default function StableRentalPage() { return <PageShell>
   <InnerHero eyebrow="A base for your business" title="Bring your operation somewhere built to perform." copy="Ten stables, extensive facilities and a location that keeps professional equestrians connected." image="/images/pages/stable-rental.jpg" imageAlt="Stable and equestrian property" />
   <section className="editorial-section" id="content"><div className="editorial-lead"><p className="eyebrow">Stable rental</p><h2>Professional, practical and ready to work.</h2></div><div className="prose-columns"><p>Goodspell Park offers ten stables for rent at its ideally located property. The immaculate, functional base is suited to showjumpers, eventers, breakers, pre-trainers and racehorse trainers.</p><p>Tenants can access the wider facilities as required, creating a streamlined base for the day-to-day logistics of a professional equestrian business.</p><p>An accessible pricing structure is designed to give the right business room to flourish. Availability and inclusions are confirmed directly with the Goodspell Park team.</p></div>

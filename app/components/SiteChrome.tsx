@@ -1,20 +1,22 @@
+import Link from "next/link";
+
 const exploreLinks = [
   ["Stable rental", "/stablerental"],
   ["Stallions", "/stallions"],
   ["Gallery", "/gallery"],
   ["News", "/news"],
   ["Horses for sale", "/horsesforsale"],
-  ["Book online", "/book-online"],
+  ["Book a lesson", "/book-online"],
   ["Request a clinic", "/upcoming-events"],
 ];
 
 export function SiteHeader() {
   return (
     <header className="site-header">
-      <a className="brand" href="/" aria-label="Goodspell Park home">
+      <Link className="brand" href="/" aria-label="Goodspell Park home">
         <span className="brand-mark">GP</span>
         <span><strong>Goodspell Park</strong><small>Equine Services</small></span>
-      </a>
+      </Link>
 
       <nav className="desktop-nav" aria-label="Primary navigation">
         <a href="/about-us">About</a>
@@ -29,7 +31,7 @@ export function SiteHeader() {
         </details>
       </nav>
 
-      <a className="header-cta" href="mailto:scoman2@bigpond.com">Make an enquiry <span aria-hidden="true">↗</span></a>
+      <a className="header-cta" href="/contact">Make an enquiry <span aria-hidden="true">→</span></a>
 
       <details className="mobile-nav">
         <summary aria-label="Open navigation">Menu</summary>
@@ -58,6 +60,9 @@ export function SiteFooter() {
         <a href="tel:+61427019610">0427 019 610</a> · <a href="tel:+61412019611">0412 019 611</a>
       </address>
       <div className="footer-links">
+        <a href="/services">Services</a>
+        <a href="/facilities">Facilities</a>
+        <a href="/contact">Contact</a>
         <a href="https://www.facebook.com/Goodspellpark/" target="_blank" rel="noreferrer">Facebook ↗</a>
         <a href="/book-online">Book a lesson</a>
         <a href="#top">Back to top ↑</a>
@@ -100,11 +105,19 @@ export function ContactBand({
       <p className="eyebrow light">Start a conversation</p>
       <h2>{title}</h2>
       <p>{copy}</p>
-      <a className="button button-light" href="mailto:scoman2@bigpond.com">Make an enquiry <span aria-hidden="true">↗</span></a>
+      <div className="contact-actions">
+        <a className="button button-light" href="/contact">Start an enquiry <span aria-hidden="true">→</span></a>
+        <a className="text-link light-link" href="tel:+61427019610">Call 0427 019 610</a>
+      </div>
     </section>
   );
 }
 
 export function PageShell({ children }: { children: React.ReactNode }) {
-  return <main><SiteHeader />{children}<SiteFooter /></main>;
+  return <>
+    <a className="skip-link" href="#main-content">Skip to main content</a>
+    <SiteHeader />
+    <main id="main-content">{children}</main>
+    <SiteFooter />
+  </>;
 }

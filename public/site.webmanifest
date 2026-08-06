@@ -1,0 +1,10 @@
+{
+  "name": "Goodspell Park Equine Services",
+  "short_name": "Goodspell Park",
+  "description": "Showjumping coaching, horse training and equine care near Seymour, Victoria.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf8f2",
+  "theme_color": "#17392f",
+  "icons": [{ "src": "/logo.jpg", "sizes": "180x180", "type": "image/jpeg" }]
+}

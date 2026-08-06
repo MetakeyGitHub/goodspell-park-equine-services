@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
 import { ContactBand, InnerHero, PageShell } from "../components/SiteChrome";
 import { stallions } from "../content";
+import { pageMetadata } from "../seo";
 
-export const metadata: Metadata = { title: "Stallions", description: "Explore the Goodspell Park international breeding stallion catalogue." };
+export const metadata = pageMetadata({ title: "Sport Horse Stallion Catalogue Archive", description: "Explore Goodspell Park's archive catalogue of international showjumping and sport-horse stallions, bloodlines and historical service information.", path: "/stallions", keywords: ["sport horse stallions Australia", "showjumping stallions Australia", "horse breeding Victoria", "Kannan stallion", "Goodspell Park stallions"] });
 export default function StallionsPage() { const featured = stallions.filter(s => s.featured); return <PageShell>
   <InnerHero eyebrow="Breeding catalogue" title="World-class bloodlines. Australian access." copy="A legacy catalogue of international sport-horse stallions represented through Goodspell Park." image="/images/pages/stallion-chilli.jpg" imageAlt="International breeding stallion" position="center 35%" />
   <section className="editorial-section" id="content"><div className="editorial-lead compact"><p className="eyebrow">Featured stallions</p><h2>Performance written into the pedigree.</h2><p>Goodspell Park worked with Mike Tweedie and Groupe France Elevage to bring leading international breeding lines to Australian breeders.</p></div>

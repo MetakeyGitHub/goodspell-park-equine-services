@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
 import { ContactBand, InnerHero, PageShell } from "../components/SiteChrome";
+import { pageMetadata } from "../seo";
 
-export const metadata: Metadata = { title: "Request A Clinic", description: "Request a showjumping, dressage or flatwork clinic with Jamie and Sue Coman." };
+export const metadata = pageMetadata({ title: "Request a Showjumping Clinic", description: "Request a one- or two-day showjumping, dressage or flatwork clinic in Victoria or interstate with Jamie and Sue Coman.", path: "/upcoming-events", keywords: ["showjumping clinics Victoria", "equestrian clinics Australia", "Jamie Coman clinic", "Sue Coman clinic", "horse riding clinic Victoria"] });
 export default function ClinicPage() { return <PageShell>
   <InnerHero eyebrow="Bring Goodspell Park to you" title="A better clinic starts with a clear purpose." copy="One- and two-day coaching experiences for riders and horses of all levels." image="/images/pages/lesson-sue.jpg" imageAlt="Jamie and Sue Coman showjumping clinic" />
   <section className="clinic-layout" id="content"><div><p className="eyebrow">Showjumping clinics</p><h2>Experience shared. Confidence built.</h2><p>Jamie and Sue make themselves available for a number of clinics each month. Programs can focus on showjumping at all levels, dressage and flatwork, with an enjoyable, educational approach shaped by more than 30 years of industry knowledge.</p><p>Clinics can be structured across one or two days and tailored to the age, level and goals of the riders and horses attending.</p></div>

@@ -8,6 +8,7 @@ const routes = [
   "/", "/about-us", "/competitionhorses", "/services", "/facilities",
   "/stablerental", "/stallions", "/gallery", "/news", "/horsesforsale",
   "/book-online", "/upcoming-events",
+  "/contact",
 ];
 
 for (const route of routes) {

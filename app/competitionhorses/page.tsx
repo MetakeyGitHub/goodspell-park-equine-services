@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
 import { ContactBand, InnerHero, PageShell } from "../components/SiteChrome";
 import { competitionHorses } from "../content";
+import { pageMetadata } from "../seo";
 
-export const metadata: Metadata = { title: "Competition Horses", description: "Meet competition horses produced and campaigned by Goodspell Park." };
+export const metadata = pageMetadata({ title: "Showjumping & Competition Horses", description: "Explore archive profiles of showjumping horses produced and campaigned by Jamie and Sue Coman at Goodspell Park in Victoria.", path: "/competitionhorses", keywords: ["showjumping horses Victoria", "competition horses Australia", "horse production Victoria", "Goodspell Park horses"] });
 
 export default function CompetitionHorsesPage() {
   return <PageShell>

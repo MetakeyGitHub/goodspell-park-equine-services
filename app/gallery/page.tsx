@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
 import { ContactBand, InnerHero, PageShell } from "../components/SiteChrome";
+import { pageMetadata } from "../seo";
 
-export const metadata: Metadata = { title: "Gallery", description: "Competition, training and life at Goodspell Park." };
+export const metadata = pageMetadata({ title: "Equestrian & Showjumping Gallery", description: "View archive photographs of showjumping, competition horses, coaching and daily life at Goodspell Park in Whiteheads Creek, Victoria.", path: "/gallery", keywords: ["Goodspell Park gallery", "showjumping photos Australia", "equestrian centre Victoria photos"] });
 const gallery = [
   ["/images/pages/lizetta.jpg", "Competition day"], ["/images/pages/services.jpg", "On course"],
   ["/images/pages/loose-kannan.jpg", "Young horse development"], ["/images/rider.jpg", "Goodspell Park training"],
