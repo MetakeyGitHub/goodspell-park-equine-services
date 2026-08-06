@@ -1,13 +1,13 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-async function render() {
+async function render(pathname = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
   const { default: worker } = await import(workerUrl.href);
 
   return worker.fetch(
-    new Request("http://localhost/", { headers: { accept: "text/html" } }),
+    new Request(`http://localhost${pathname}`, { headers: { accept: "text/html" } }),
     { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
     { waitUntil() {}, passThroughOnException() {} },
   );
@@ -25,6 +25,27 @@ test("server-renders the Goodspell Park homepage", async () => {
   assert.match(html, /Sydney Olympics/);
   assert.match(html, /Make an enquiry/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Your site is taking shape/i);
+});
+
+test("renders every primary site route", async () => {
+  const routes = {
+    "/about-us": "Experience that shapes every partnership.",
+    "/competitionhorses": "Horses with heart, scope and a future.",
+    "/services": "One place. Every step forward.",
+    "/facilities": "Built for horses. Ready for ambition.",
+    "/stablerental": "Bring your operation somewhere built to perform.",
+    "/stallions": "World-class bloodlines. Australian access.",
+    "/gallery": "The work behind every moment.",
+    "/news": "News from the team and the stable.",
+    "/horsesforsale": "The right horse changes everything.",
+    "/book-online": "One hour. One partnership. Clear next steps.",
+    "/upcoming-events": "A better clinic starts with a clear purpose.",
+  };
+  for (const [pathname, heading] of Object.entries(routes)) {
+    const response = await render(pathname);
+    assert.equal(response.status, 200, pathname);
+    assert.match(await response.text(), new RegExp(heading.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), pathname);
+  }
 });
 
 test("includes accessible navigation and sharing metadata", async () => {

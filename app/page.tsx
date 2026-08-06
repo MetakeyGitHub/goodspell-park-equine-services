@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ContactBand, PageShell } from "./components/SiteChrome";
 
 export const metadata: Metadata = {
   description:
@@ -30,35 +31,7 @@ const services = [
 
 export default function Home() {
   return (
-    <main>
-      <header className="site-header">
-        <a className="brand" href="#top" aria-label="Goodspell Park home">
-          <span className="brand-mark">GP</span>
-          <span>
-            <strong>Goodspell Park</strong>
-            <small>Equine Services</small>
-          </span>
-        </a>
-
-        <nav className="desktop-nav" aria-label="Primary navigation">
-          <a href="#about">Our approach</a>
-          <a href="#services">Services</a>
-          <a href="#team">Jamie & Sue</a>
-          <a href="#contact">Contact</a>
-        </nav>
-
-        <a className="header-cta" href="#contact">Make an enquiry <span aria-hidden="true">↗</span></a>
-
-        <details className="mobile-nav">
-          <summary aria-label="Open navigation">Menu</summary>
-          <nav aria-label="Mobile navigation">
-            <a href="#about">Our approach</a>
-            <a href="#services">Services</a>
-            <a href="#team">Jamie & Sue</a>
-            <a href="#contact">Contact</a>
-          </nav>
-        </details>
-      </header>
+    <PageShell>
 
       <section className="hero" id="top" aria-labelledby="hero-title">
         <img
@@ -76,7 +49,7 @@ export default function Home() {
           <p className="hero-copy">Elite horsemanship. Individual care. A place where horses and riders are given every opportunity to thrive.</p>
           <div className="hero-actions">
             <a className="button button-light" href="#services">Explore our services <span aria-hidden="true">→</span></a>
-            <a className="text-link light-link" href="#team">Meet Jamie & Sue <span aria-hidden="true">↘</span></a>
+            <a className="text-link light-link" href="/about-us">Meet Jamie & Sue <span aria-hidden="true">↘</span></a>
           </div>
         </div>
         <div className="hero-note" aria-label="Our focus">
@@ -95,7 +68,7 @@ export default function Home() {
           <h2 id="intro-title">The measure of great horsemanship is not just performance. It’s the confidence built along the way.</h2>
           <div className="intro-copy">
             <p>Goodspell Park is the home of international showjumping riders Jamie and Sue Coman. From first rounds to World Cup level, their philosophy remains the same: understand the individual, build the partnership and never compromise on care.</p>
-            <a className="text-link dark-link" href="#team">Our story <span aria-hidden="true">→</span></a>
+            <a className="text-link dark-link" href="/about-us">Our story <span aria-hidden="true">→</span></a>
           </div>
         </div>
         <div className="values" aria-label="Goodspell Park values">
@@ -117,7 +90,7 @@ export default function Home() {
               <span className="service-number">{service.number}</span>
               <h3>{service.title}</h3>
               <p>{service.copy}</p>
-              <a href="#contact" aria-label={`Enquire about ${service.title}`}>Enquire <span aria-hidden="true">↗</span></a>
+              <a href="mailto:scoman2@bigpond.com" aria-label={`Enquire about ${service.title}`}>Enquire <span aria-hidden="true">↗</span></a>
             </article>
           ))}
         </div>
@@ -146,33 +119,7 @@ export default function Home() {
         <p className="quote-note">A boutique Victorian property where experience, facilities and a deeply personal approach come together.</p>
       </section>
 
-      <section className="contact" id="contact" aria-labelledby="contact-title">
-        <img src="/images/horse.jpg" alt="Horse at Goodspell Park" width="450" height="300" loading="lazy" />
-        <div className="contact-overlay" />
-        <div className="contact-content">
-          <p className="eyebrow light">Start a conversation</p>
-          <h2 id="contact-title">Let’s talk about<br />your next chapter.</h2>
-          <p>For training, coaching, agistment, spelling or sales enquiries, speak with the Goodspell Park team.</p>
-          <a className="button button-light" href="mailto:scoman2@bigpond.com">Make an enquiry <span aria-hidden="true">↗</span></a>
-        </div>
-      </section>
-
-      <footer>
-        <div className="footer-brand">
-          <span className="brand-mark inverse">GP</span>
-          <div><strong>Goodspell Park</strong><small>Equine Services</small></div>
-        </div>
-        <address>
-          140 Hall Lane, Whiteheads Creek VIC 3660<br />
-          <a href="mailto:scoman2@bigpond.com">scoman2@bigpond.com</a><br />
-          <a href="tel:+61427019610">0427 019 610</a> · <a href="tel:+61412019611">0412 019 611</a>
-        </address>
-        <div className="footer-links">
-          <a href="https://www.facebook.com/Goodspellpark/" target="_blank" rel="noreferrer">Facebook ↗</a>
-          <a href="#top">Back to top ↑</a>
-        </div>
-        <p className="copyright">© {new Date().getFullYear()} Goodspell Park Equine Services</p>
-      </footer>
-    </main>
+      <ContactBand title="Let’s talk about your next chapter." copy="For training, coaching, agistment, spelling or sales enquiries, speak with the Goodspell Park team." />
+    </PageShell>
   );
 }
